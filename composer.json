@@ -1,0 +1,24 @@
+{
+    "name": "global/channel_manager_api",
+    "description": "A vendor to access the internal channel manager API",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Api\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "David",
+            "email": "daviddpds@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "symfony/console": "^5.0 || ^6.0",
+        "symfony/dotenv": "^5.0 || ^6.0",
+        "symfony/serializer-pack": "^1.3"
+    }
+}
