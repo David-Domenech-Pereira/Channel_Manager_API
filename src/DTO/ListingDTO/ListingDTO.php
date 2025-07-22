@@ -13,6 +13,23 @@ use Api\DTO\RatePlanDTO\RatePlanDTO;
 
 class ListingDTO
 {
+    public const ID_PROPERTY_TYPE_APARTMENT = 1;
+    public const ID_PROPERTY_TYPE_HOTEL = 2;
+    public const ID_PROPERTY_TYPE_BUNGALOW = 3;
+    public const ID_PROPERTY_TYPE_CHALET = 4;
+    public const ID_PROPERTY_TYPE_HOLIDAY_HOME = 5;
+    public const ID_PROPERTY_TYPE_VILLA = 6;
+    public const ID_PROPERTY_TYPE_MOBILE_HOME = 7;
+    public const ID_PROPERTY_TYPE_TENT = 8;
+
+    public const COUNTRY_ES = 'ES';
+    public const COUNTRY_FR = 'FR';
+    public const COUNTRY_IT = 'IT';
+    public const COUNTRY_DE = 'DE';
+    public const COUNTRY_CH = 'CH';
+    public const COUNTRY_CZ = 'CZ';
+    public const COUNTRY_GB = 'GB';
+    public const COUNTRY_PT = 'PT';
     private int $id;
     private string $title;
     private int $propertyType;
@@ -360,5 +377,26 @@ class ListingDTO
     public function setAvailability(array $availability): void
     {
         $this->availability = $availability;
+    }
+
+    public function getCountryIso3166Alpha3(): string
+    {
+        // Convert country name to ISO 3166-1 alpha-3 code
+        $countryCodes = [
+            ListingDTO::COUNTRY_DE => 'DEU',
+            ListingDTO::COUNTRY_FR => 'FRA',
+            ListingDTO::COUNTRY_IT => 'ITA',
+            ListingDTO::COUNTRY_ES => 'ESP',
+            ListingDTO::COUNTRY_CH => 'CHE',
+            ListingDTO::COUNTRY_CZ => 'CZE',
+            ListingDTO::COUNTRY_GB => 'GBR',
+            ListingDTO::COUNTRY_PT => 'PRT',
+        ];
+
+        if (!in_array(strtoupper($this->country), array_keys($countryCodes))) {
+            throw new \InvalidArgumentException(sprintf('"%s" is not supported.', $this->country));
+        }
+
+        return $countryCodes[strtoupper($this->country)];
     }
 }

@@ -71,5 +71,13 @@ class CreateListingResponseDTO
         $this->requiredActions = $requiredActions;
     }
 
+    public function addListingCode(string $listingCode): void
+    {
+        $this->listingCodes[] = $listingCode;
+    }
 
+    public function addRequiredAction(string $action): void
+    {
+        $this->requiredActions[] = $action;
+    }
 }
