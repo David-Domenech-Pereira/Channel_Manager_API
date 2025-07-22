@@ -1,5 +1,5 @@
 {
-    "name": "global/channel_manager_api",
+    "name": "global_rental_holidays/channel_manager_api",
     "description": "A vendor to access the internal channel manager API",
     "type": "library",
     "autoload": {
