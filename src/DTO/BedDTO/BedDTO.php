@@ -4,6 +4,13 @@ namespace Api\DTO\BedDTO;
 
 class BedDTO
 {
+    public const ID_SINGLE = 1;
+    public const ID_DOUBLE = 2;
+    public const ID_SINGLE_BUNK_BED = 3;
+    public const ID_DOUBLE_BUNK_BED = 4;
+    public const ID_SINGLE_SOFABED = 5;
+    public const ID_DOUBLE_SOFABED = 6;
+    public const ID_ROLLAWAYS_ON_DEMAND = 7;
     private int $type;
     private int $amount;
     private int $capacity;
