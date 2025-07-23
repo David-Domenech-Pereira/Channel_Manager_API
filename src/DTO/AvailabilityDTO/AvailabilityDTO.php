@@ -10,7 +10,7 @@ class AvailabilityDTO
     private int $maximumStay;
     private bool $openCheckIn;
     private bool $openCheckOut;
-    private bool $isClosed;
+    private bool $closed;
 
     public function getDate(): \DateTime
     {
@@ -74,11 +74,11 @@ class AvailabilityDTO
 
     public function isClosed(): bool
     {
-        return $this->isClosed;
+        return $this->closed;
     }
 
     public function setIsClosed(bool $isClosed): void
     {
-        $this->isClosed = $isClosed;
+        $this->closed = $isClosed;
     }
 }
