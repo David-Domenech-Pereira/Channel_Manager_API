@@ -4,6 +4,7 @@ namespace Api\DTO\RatePlanDTO;
 
 use Api\DTO\CancellationPolicyDTO\CancellationPolicyDTO;
 use Api\DTO\LosPriceDTO\LosPriceDTO;
+use App\Entity\CancellationPolicy;
 
 class RatePlanDTO
 {
@@ -124,5 +125,34 @@ class RatePlanDTO
     public function setId(?int $id): void
     {
         $this->id = $id;
+    }
+
+    public function getFreeCancellation()
+    {
+        if ($this->getCancellationPolicy()[0]->getFreeRefundDays() == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function getEarliestCancellationPolicy(): ?CancellationPolicyDTO
+    {
+        $cancellationPolicy = $this->getCancellationPolicy();
+
+        if (count($cancellationPolicy) === 0) {
+            return null;
+        }
+
+        $maxFreeRefundDays = 0;
+        $policyWithMaxFreeRefundDays = null;
+        foreach ($cancellationPolicy as $policy) {
+            if ($policy->getFreeRefundDays() > $maxFreeRefundDays) {
+                $maxFreeRefundDays = $policy->getFreeRefundDays();
+                $policyWithMaxFreeRefundDays = $policy;
+            }
+        }
+
+        return $policyWithMaxFreeRefundDays;
     }
 }

@@ -14,11 +14,11 @@ class GetListingsResponseDTO
     private ?int $statusCode = null;
 
     public function __construct(
+        ?array $listings = null,
         ?string $errorMessage = null,
-        ?int $statusCode = null,
-        ?ListingStatusDTO $listingStatus = null,
+        ?int $statusCode = null
     ) {
-        $this->listingStatus = $listingStatus;
+        $this->listings = $listings;
         $this->errorMessage = $errorMessage;
         $this->statusCode = $statusCode;
     }
