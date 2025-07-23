@@ -252,4 +252,15 @@ class BookingDTO
     {
         $this->ratePlanId = $ratePlanId;
     }
+
+    public function addExtra(BookingExtraDTO $extra): void
+    {
+        $this->extras[] = $extra;
+    }
+
+    public function addGuest(GuestDTO $guest): void
+    {
+        $this->guests[] = $guest;
+    }
+
 }
