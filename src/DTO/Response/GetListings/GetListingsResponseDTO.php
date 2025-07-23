@@ -2,6 +2,8 @@
 
 namespace Api\DTO\Response\GetListings;
 
+use Api\DTO\ListingStatusDTO\ListingStatusDTO;
+
 class GetListingsResponseDTO
 {
     /**
@@ -10,6 +12,16 @@ class GetListingsResponseDTO
     private ?array $listings = null;
     private ?string $errorMessage = null;
     private ?int $statusCode = null;
+
+    public function __construct(
+        ?string $errorMessage = null,
+        ?int $statusCode = null,
+        ?ListingStatusDTO $listingStatus = null,
+    ) {
+        $this->listingStatus = $listingStatus;
+        $this->errorMessage = $errorMessage;
+        $this->statusCode = $statusCode;
+    }
 
     public function getListings(): ?array
     {
