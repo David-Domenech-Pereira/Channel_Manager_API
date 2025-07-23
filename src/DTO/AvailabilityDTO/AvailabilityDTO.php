@@ -81,4 +81,9 @@ class AvailabilityDTO
     {
         $this->closed = $isClosed;
     }
+
+    public function setClosed(bool $closed): void
+    {
+        $this->closed = $closed;
+    }
 }
