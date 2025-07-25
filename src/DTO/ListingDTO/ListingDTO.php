@@ -30,6 +30,7 @@ class ListingDTO
     public const COUNTRY_CZ = 'CZ';
     public const COUNTRY_GB = 'GB';
     public const COUNTRY_PT = 'PT';
+    public const COUNTRY_AT = 'AT';
     private int $id;
     private string $title;
     private int $propertyType;
