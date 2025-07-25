@@ -28,7 +28,7 @@ class AvailabilityRequestResponseDTO
 
     public function isAvailable(): bool
     {
-        return $this->isAvailable;
+        return $this->available;
     }
 
     public function getAvailable(): bool
@@ -38,7 +38,7 @@ class AvailabilityRequestResponseDTO
 
     public function setIsAvailable(bool $isAvailable): void
     {
-        $this->isAvailable = $isAvailable;
+        $this->available = $isAvailable;
     }
 
     public function setAvailable(bool $available): void
