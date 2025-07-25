@@ -4,22 +4,22 @@ namespace Api\DTO\Response\AvailabilityRequest;
 
 class AvailabilityRequestResponseDTO
 {
-    private bool $isAvailable;
+    private bool $available;
     private float $netPrice;
     private float $totalSellingPrice;
     private float $excludedMandatoryTaxesPrice;
     private ?string $noAvailabilityReason = null;
 
     /**
-     * @param bool $isAvailable
+     * @param bool $available
      * @param float $netPrice
      * @param float $totalSellingPrice
      * @param float $excludedMandatoryTaxesPrice
      * @param string|null $noAvailabilityReason
      */
-    public function __construct(bool $isAvailable, float $netPrice, float $totalSellingPrice, float $excludedMandatoryTaxesPrice, ?string $noAvailabilityReason = null)
+    public function __construct(bool $available, float $netPrice, float $totalSellingPrice, float $excludedMandatoryTaxesPrice, ?string $noAvailabilityReason = null)
     {
-        $this->isAvailable = $isAvailable;
+        $this->available = $available;
         $this->netPrice = $netPrice;
         $this->totalSellingPrice = $totalSellingPrice;
         $this->excludedMandatoryTaxesPrice = $excludedMandatoryTaxesPrice;
@@ -31,9 +31,19 @@ class AvailabilityRequestResponseDTO
         return $this->isAvailable;
     }
 
+    public function getAvailable(): bool
+    {
+        return $this->available;
+    }
+
     public function setIsAvailable(bool $isAvailable): void
     {
         $this->isAvailable = $isAvailable;
+    }
+
+    public function setAvailable(bool $available): void
+    {
+        $this->available = $available;
     }
 
     public function getNetPrice(): float
