@@ -10,7 +10,6 @@ class AvailabilityRequestDTO
     private ?int $listingId = null;
     private ?int $multipleUnitTypeId = null;
     private ?int $multipleUnitId = null;
-    private int $integrationId;
     private \DateTime $startDate;
     private \DateTime $endDate;
     private int $adults;
@@ -18,7 +17,6 @@ class AvailabilityRequestDTO
     private int $mealPlanId = RatePlanDTO::MEAL_PLAN_SA;
 
     public function __construct(
-        int $integrationId,
         \DateTime $startDate,
         \DateTime $endDate,
         int $adults,
@@ -29,7 +27,6 @@ class AvailabilityRequestDTO
         ?int $multipleUnitId = null,
         int $mealPlanId = RatePlanDTO::MEAL_PLAN_SA
     ) {
-        $this->integrationId = $integrationId;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
         $this->adults = $adults;
@@ -79,16 +76,6 @@ class AvailabilityRequestDTO
     public function setMultipleUnitId(?int $multipleUnitId): void
     {
         $this->multipleUnitId = $multipleUnitId;
-    }
-
-    public function getIntegrationId(): int
-    {
-        return $this->integrationId;
-    }
-
-    public function setIntegrationId(int $integrationId): void
-    {
-        $this->integrationId = $integrationId;
     }
 
     public function getStartDate(): \DateTime
