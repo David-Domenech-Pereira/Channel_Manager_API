@@ -295,4 +295,19 @@ class BookingDTO
     {
         $this->payments = $payments;
     }
+
+    public function getCancellationPolicies(): array
+    {
+        return $this->cancellationPolicies;
+    }
+
+    public function setCancellationPolicies(array $cancellationPolicies): void
+    {
+        $this->cancellationPolicies = $cancellationPolicies;
+    }
+
+    public function addCancellationPolicy(BookingCancellationPolicyDTO $cancellationPolicy): void
+    {
+        $this->cancellationPolicies[] = $cancellationPolicy;
+    }
 }
