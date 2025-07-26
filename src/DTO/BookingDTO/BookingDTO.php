@@ -22,6 +22,9 @@ class BookingDTO
     private ?string $listingCode = null;
     private ?string $unitTypeCode = null;
     private ?string $unitCode = null;
+    private ?int $listingId = null;
+    private ?int $unitTypeId = null;
+    private ?int $unitId = null;
     private ?int $status = null;
     private ?\DateTime $checkIn = null;
     private ?\DateTime $checkOut = null;
@@ -321,5 +324,35 @@ class BookingDTO
     public function setCardInformation(?BookingCardInformationDTO $cardInformation): void
     {
         $this->cardInformation = $cardInformation;
+    }
+
+    public function getListingId(): ?int
+    {
+        return $this->listingId;
+    }
+
+    public function setListingId(?int $listingId): void
+    {
+        $this->listingId = $listingId;
+    }
+
+    public function getUnitTypeId(): ?int
+    {
+        return $this->unitTypeId;
+    }
+
+    public function setUnitTypeId(?int $unitTypeId): void
+    {
+        $this->unitTypeId = $unitTypeId;
+    }
+
+    public function getUnitId(): ?int
+    {
+        return $this->unitId;
+    }
+
+    public function setUnitId(?int $unitId): void
+    {
+        $this->unitId = $unitId;
     }
 }
