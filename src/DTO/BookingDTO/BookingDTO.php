@@ -3,6 +3,7 @@
 namespace Api\DTO\BookingDTO;
 
 use Api\DTO\BookingCancellationPolicyDTO\BookingCancellationPolicyDTO;
+use Api\DTO\BookingCardInformationDTO\BookingCardInformationDTO;
 use Api\DTO\BookingExtraDTO\BookingExtraDTO;
 use Api\DTO\BookingPaymentDTO\BookingPaymentDTO;
 use Api\DTO\CheckinInformationDTO\CheckinInformationDTO;
@@ -55,6 +56,7 @@ class BookingDTO
      * @var BookingCancellationPolicyDTO[]
      */
     private array $cancellationPolicies = [];
+    private ?BookingCardInformationDTO $cardInformation = null;
 
     public function getInternalId(): ?int
     {
@@ -309,5 +311,15 @@ class BookingDTO
     public function addCancellationPolicy(BookingCancellationPolicyDTO $cancellationPolicy): void
     {
         $this->cancellationPolicies[] = $cancellationPolicy;
+    }
+
+    public function getCardInformation(): ?BookingCardInformationDTO
+    {
+        return $this->cardInformation;
+    }
+
+    public function setCardInformation(?BookingCardInformationDTO $cardInformation): void
+    {
+        $this->cardInformation = $cardInformation;
     }
 }
