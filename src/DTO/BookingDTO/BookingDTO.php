@@ -3,6 +3,7 @@
 namespace Api\DTO\BookingDTO;
 
 use Api\DTO\BookingExtraDTO\BookingExtraDTO;
+use Api\DTO\BookingPaymentDTO\BookingPaymentDTO;
 use Api\DTO\CheckinInformationDTO\CheckinInformationDTO;
 use Api\DTO\GuestDTO\GuestDTO;
 
@@ -40,6 +41,11 @@ class BookingDTO
      * @var BookingExtraDTO[]
      */
     private array $extras = [];
+
+    /**
+     * @var BookingPaymentDTO[]
+     */
+    private array $payments = [];
     private ?string $clientCountryCode = null;
     private ?int $ratePlanId = null;
 
@@ -263,4 +269,13 @@ class BookingDTO
         $this->guests[] = $guest;
     }
 
+    public function getPayments(): array
+    {
+        return $this->payments;
+    }
+
+    public function setPayments(array $payments): void
+    {
+        $this->payments = $payments;
+    }
 }
