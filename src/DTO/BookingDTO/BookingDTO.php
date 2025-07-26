@@ -2,6 +2,7 @@
 
 namespace Api\DTO\BookingDTO;
 
+use Api\DTO\BookingCancellationPolicyDTO\BookingCancellationPolicyDTO;
 use Api\DTO\BookingExtraDTO\BookingExtraDTO;
 use Api\DTO\BookingPaymentDTO\BookingPaymentDTO;
 use Api\DTO\CheckinInformationDTO\CheckinInformationDTO;
@@ -15,6 +16,7 @@ class BookingDTO
     public const STATUS_PENDING_PAYMENT = 4;
     public const STATUS_CHECKED_IN = 5;
     public const STATUS_CHECKED_OUT = 6;
+    private ?int $internalId = null;
     private string $externalId;
     private ?string $listingCode = null;
     private ?string $unitTypeCode = null;
@@ -48,6 +50,21 @@ class BookingDTO
     private array $payments = [];
     private ?string $clientCountryCode = null;
     private ?int $ratePlanId = null;
+
+    /**
+     * @var BookingCancellationPolicyDTO[]
+     */
+    private array $cancellationPolicies = [];
+
+    public function getInternalId(): ?int
+    {
+        return $this->internalId;
+    }
+
+    public function setInternalId(?int $internalId): void
+    {
+        $this->internalId = $internalId;
+    }
 
     public function getExternalId(): string
     {
