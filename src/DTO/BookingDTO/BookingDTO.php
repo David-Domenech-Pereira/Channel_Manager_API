@@ -60,6 +60,8 @@ class BookingDTO
      */
     private array $cancellationPolicies = [];
     private ?BookingCardInformationDTO $cardInformation = null;
+    private ?\DateTime $createdAt = null;
+    private ?\DateTime $updatedAt = null;
 
     public function getInternalId(): ?int
     {
@@ -354,5 +356,25 @@ class BookingDTO
     public function setUnitId(?int $unitId): void
     {
         $this->unitId = $unitId;
+    }
+
+    public function getCreatedAt(): ?\DateTime
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(?\DateTime $createdAt): void
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    public function getUpdatedAt(): ?\DateTime
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTime $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
     }
 }
