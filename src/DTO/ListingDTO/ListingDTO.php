@@ -392,6 +392,7 @@ class ListingDTO
             ListingDTO::COUNTRY_CZ => 'CZE',
             ListingDTO::COUNTRY_GB => 'GBR',
             ListingDTO::COUNTRY_PT => 'PRT',
+            ListingDTO::COUNTRY_AT => 'AUT',
         ];
 
         if (!in_array(strtoupper($this->country), array_keys($countryCodes))) {
