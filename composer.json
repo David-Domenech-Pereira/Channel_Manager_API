@@ -4,6 +4,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
+            "PMSApi\\": "src/PMSApi/",
             "Api\\": "src/"
         }
     },
