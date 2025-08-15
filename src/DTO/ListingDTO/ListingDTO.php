@@ -32,6 +32,7 @@ class ListingDTO
     public const COUNTRY_PT = 'PT';
     public const COUNTRY_AT = 'AT';
     public const COUNTRY_PL = 'PL';
+    public const COUNTRY_DK = 'DK';
     private int $id;
     private string $title;
     private int $propertyType;
@@ -395,6 +396,7 @@ class ListingDTO
             ListingDTO::COUNTRY_PT => 'PRT',
             ListingDTO::COUNTRY_AT => 'AUT',
             ListingDTO::COUNTRY_PL => 'POL',
+            ListingDTO::COUNTRY_DK => 'DNK',
         ];
 
         if (!in_array(strtoupper($this->country), array_keys($countryCodes))) {
