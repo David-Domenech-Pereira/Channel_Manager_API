@@ -33,6 +33,13 @@ class ListingDTO
     public const COUNTRY_AT = 'AT';
     public const COUNTRY_PL = 'PL';
     public const COUNTRY_DK = 'DK';
+    public const COUNTRY_FI = 'FI';
+    public const COUNTRY_NL = 'NL';
+    public const COUNTRY_NO = 'NO';
+    public const COUNTRY_SE = 'SE';
+    public const COUNTRY_HU = 'HU';
+    public const COUNTRY_BE = 'BE';
+    public const COUNTRY_RO = 'RO';
     private int $id;
     private string $title;
     private int $propertyType;
@@ -397,6 +404,13 @@ class ListingDTO
             ListingDTO::COUNTRY_AT => 'AUT',
             ListingDTO::COUNTRY_PL => 'POL',
             ListingDTO::COUNTRY_DK => 'DNK',
+            ListingDTO::COUNTRY_FI => 'FIN',
+            ListingDTO::COUNTRY_NL => 'NLD',
+            ListingDTO::COUNTRY_NO => 'NOR',
+            ListingDTO::COUNTRY_SE => 'SWE',
+            ListingDTO::COUNTRY_HU => 'HUN',
+            ListingDTO::COUNTRY_BE => 'BEL',
+            ListingDTO::COUNTRY_RO => 'ROU',
         ];
 
         if (!in_array(strtoupper($this->country), array_keys($countryCodes))) {
