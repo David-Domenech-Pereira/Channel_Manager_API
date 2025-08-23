@@ -64,10 +64,10 @@ class PricesResponseDTO implements \JsonSerializable
     {
         return [
             'status' => $this->status,
-            'hotelCode' => $this->hotelCode,
-            'integrationId' => $this->integrationId,
-            'errorMessage' => $this->errorMessage,
-            'prices' => $this->prices,
+            'hotelCode' => $this->hotelCode ?? '',
+            'integrationId' => $this->integrationId ?? 0,
+            'errorMessage' => $this->errorMessage ?? '',
+            'prices' => $this->prices ?? [],
         ];
     }
 }
