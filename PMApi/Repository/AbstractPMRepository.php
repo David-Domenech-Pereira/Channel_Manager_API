@@ -28,6 +28,7 @@ class AbstractPMRepository
                 'Accept' => 'application/json',
                 'User-Agent' => $this->userAgent,
             ],
+            'verify' => false, // Desactivar la verificación SSL
         ]);
         return $response->getBody()->getContents();
     }
@@ -46,6 +47,7 @@ class AbstractPMRepository
                 'User-Agent' => $this->userAgent,
             ],
             'json' => $data,
+            'verify' => false, // Desactivar la verificación SSL
         ]);
         return $response->getBody()->getContents();
     }
@@ -64,6 +66,7 @@ class AbstractPMRepository
                 'User-Agent' => $this->userAgent,
             ],
             'json' => $data,
+            'verify' => false, // Desactivar la verificación SSL
         ]);
         return $response->getBody()->getContents();
     }
@@ -81,6 +84,7 @@ class AbstractPMRepository
                 'Accept' => 'application/json',
                 'User-Agent' => $this->userAgent,
             ],
+            'verify' => false, // Desactivar la verificación SSL
         ]);
         return $response->getBody()->getContents();
     }
