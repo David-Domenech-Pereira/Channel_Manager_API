@@ -13,6 +13,7 @@ class ChannelListingRepository extends AbstractChannelsRepository
     private const ENDPOINT = 'api/v1/listing/create/{integrationId}';
     private const LIST_ENDPOINT = 'api/v1/listing/list/{integrationId}';
     private const STATUS_ENDPOINT = 'api/v1/listing/detail/{integrationId}/{listingCode}';
+    private const RAW_STATUS_ENDPOINT = 'api/v1/listing/raw/{integrationId}/{listingCode}';
 
     public function sendWithStatusCheck(CreateListingDTO $createListingDTO, int $integrationId): CreateListingResponseDTO
     {
@@ -60,5 +61,16 @@ class ChannelListingRepository extends AbstractChannelsRepository
             GetListingResponseDTO::class,
             'json'
         );
+    }
+
+    public function getRawListing(int $integrationId, string $listingCode): string
+    {
+        $endpoint = str_replace(
+            ['{integrationId}', '{listingCode}'],
+            [(string) $integrationId, $listingCode],
+            self::RAW_STATUS_ENDPOINT
+        );
+
+        return $this->sendGetRequest($endpoint);
     }
 }
