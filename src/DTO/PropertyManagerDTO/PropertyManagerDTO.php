@@ -4,6 +4,9 @@ namespace Api\DTO\PropertyManagerDTO;
 
 class PropertyManagerDTO
 {
+    public const ID_INTERHOME = 6;
+    public const ID_GLOBAL = 4;
+    private int $id;
     /**
      * @var string[]
      */
@@ -24,5 +27,15 @@ class PropertyManagerDTO
         if (!in_array($language, $this->spokenLanguages, true)) {
             $this->spokenLanguages[] = $language;
         }
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 }
