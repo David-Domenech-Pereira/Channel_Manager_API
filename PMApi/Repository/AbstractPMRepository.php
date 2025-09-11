@@ -36,7 +36,7 @@ class AbstractPMRepository
     /**
      * @throws GuzzleException
      */
-    protected function sendPostRequest(string $endpoint, array $data): string
+    protected function sendPostRequest(string $endpoint, string $body): string
     {
         $url = $this->url . $endpoint;
         $client = new \GuzzleHttp\Client();
@@ -46,7 +46,7 @@ class AbstractPMRepository
                 'Accept' => 'application/json',
                 'User-Agent' => $this->userAgent,
             ],
-            'json' => $data,
+            'body' => $body,
             'verify' => false, // Desactivar la verificación SSL
         ]);
         return $response->getBody()->getContents();
