@@ -9,7 +9,7 @@ use PMApi\Response\Prices\PricesResponseDTO;
 
 class PMPricesRepository extends AbstractPMRepository
 {
-    const ENDPOINT = 'api/v1/provider/prices/{hotelCode}/{integrationId}';
+    const ENDPOINT = 'api/v1/provider/prices-get/{hotelCode}/{integrationId}';
     public function loadPrices(string $hotelCode, int $integrationId): PricesResponseDTO
     {
         $url = str_replace('{hotelCode}', $hotelCode, self::ENDPOINT);
