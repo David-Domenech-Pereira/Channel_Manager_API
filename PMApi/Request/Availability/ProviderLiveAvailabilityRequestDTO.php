@@ -19,7 +19,7 @@ class ProviderLiveAvailabilityRequestDTO
     /**
      * @var array $roomCodes Array of provider room codes, just one to search for availability in a single room
      */
-    private array $roomCodes;
+    private array $roomCodes = [];
 
     public function getCheckIn(): \DateTime
     {
