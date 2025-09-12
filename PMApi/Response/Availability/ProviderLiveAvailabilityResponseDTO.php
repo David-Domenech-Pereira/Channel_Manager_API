@@ -5,7 +5,7 @@ namespace PMApi\Response\Availability;
 class ProviderLiveAvailabilityResponseDTO
 {
     private int $status;
-    private bool $isAvailable;
+    private bool $available;
     private ?array $rateKeys = [];
     private float $netPrice = 0;
     private float $sellingPrice = 0;
@@ -22,12 +22,22 @@ class ProviderLiveAvailabilityResponseDTO
 
     public function isAvailable(): bool
     {
-        return $this->isAvailable;
+        return $this->available;
+    }
+
+    public function getAvailable(): bool
+    {
+        return $this->available;
     }
 
     public function setIsAvailable(bool $isAvailable): void
     {
-        $this->isAvailable = $isAvailable;
+        $this->available = $isAvailable;
+    }
+
+    public function setAvailable(bool $isAvailable): void
+    {
+        $this->available = $isAvailable;
     }
 
     public function getRateKeys(): ?array
