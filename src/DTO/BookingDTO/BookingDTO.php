@@ -8,6 +8,7 @@ use Api\DTO\BookingExtraDTO\BookingExtraDTO;
 use Api\DTO\BookingPaymentDTO\BookingPaymentDTO;
 use Api\DTO\CheckinInformationDTO\CheckinInformationDTO;
 use Api\DTO\GuestDTO\GuestDTO;
+use Api\DTO\ListingDTO\ListingDTO;
 
 class BookingDTO
 {
@@ -62,6 +63,7 @@ class BookingDTO
     private ?BookingCardInformationDTO $cardInformation = null;
     private ?\DateTime $createdAt = null;
     private ?\DateTime $updatedAt = null;
+    private ?ListingDTO $listing = null;
 
     public function getInternalId(): ?int
     {
@@ -398,5 +400,15 @@ class BookingDTO
             }
         }
         return $children;
+    }
+
+    public function getListing(): ?ListingDTO
+    {
+        return $this->listing;
+    }
+
+    public function setListing(?ListingDTO $listing): void
+    {
+        $this->listing = $listing;
     }
 }

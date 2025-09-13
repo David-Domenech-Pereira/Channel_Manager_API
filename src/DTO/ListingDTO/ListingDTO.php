@@ -42,6 +42,7 @@ class ListingDTO
     public const COUNTRY_RO = 'RO';
     private int $id;
     private string $title;
+    private string $providerHotelCode;
     private int $propertyType;
     /**
      * @var DescriptionDTO[]
@@ -387,6 +388,16 @@ class ListingDTO
     public function setAvailability(array $availability): void
     {
         $this->availability = $availability;
+    }
+
+    public function getProviderHotelCode(): string
+    {
+        return $this->providerHotelCode;
+    }
+
+    public function setProviderHotelCode(string $providerHotelCode): void
+    {
+        $this->providerHotelCode = $providerHotelCode;
     }
 
     public function getCountryIso3166Alpha3(): string

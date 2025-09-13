@@ -8,6 +8,7 @@ class BookingExtraDTO
     private ?int $quantity = null;
     private ?float $price = null;
     private ?bool $included = null;
+    private ?string $providerCode = null;
 
     public function getType(): ?string
     {
@@ -47,5 +48,15 @@ class BookingExtraDTO
     public function setIncluded(?bool $included): void
     {
         $this->included = $included;
+    }
+
+    public function getProviderCode(): ?string
+    {
+        return $this->providerCode;
+    }
+
+    public function setProviderCode(?string $providerCode): void
+    {
+        $this->providerCode = $providerCode;
     }
 }
