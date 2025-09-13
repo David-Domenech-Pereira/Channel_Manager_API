@@ -20,6 +20,7 @@ class BookingDTO
     public const STATUS_CHECKED_OUT = 6;
     private ?int $internalId = null;
     private string $externalId;
+    private ?string $providerBookingId = null;
     private ?string $listingCode = null;
     private ?string $unitTypeCode = null;
     private ?string $unitCode = null;
@@ -410,5 +411,15 @@ class BookingDTO
     public function setListing(?ListingDTO $listing): void
     {
         $this->listing = $listing;
+    }
+
+    public function getProviderBookingId(): ?string
+    {
+        return $this->providerBookingId;
+    }
+
+    public function setProviderBookingId(?string $providerBookingId): void
+    {
+        $this->providerBookingId = $providerBookingId;
     }
 }
