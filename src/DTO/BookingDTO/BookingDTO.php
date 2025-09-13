@@ -377,4 +377,26 @@ class BookingDTO
     {
         $this->updatedAt = $updatedAt;
     }
+
+    public function getAdultsNumber(int $maxChildrenAge = 18): int
+    {
+        $adults = 0;
+        foreach ($this->guests as $guest) {
+            if ($guest->getAge() === null || $guest->getAge() >= $maxChildrenAge) {
+                $adults++;
+            }
+        }
+        return $adults;
+    }
+
+    public function getChildrenNumber(int $maxChildrenAge = 18): int
+    {
+        $children = 0;
+        foreach ($this->guests as $guest) {
+            if ($guest->getAge() !== null && $guest->getAge() < $maxChildrenAge) {
+                $children++;
+            }
+        }
+        return $children;
+    }
 }
